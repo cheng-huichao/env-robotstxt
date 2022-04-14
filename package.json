@@ -1,0 +1,26 @@
+{
+  "name": "env-robotstxt",
+  "version": "1.0.1",
+  "description": "generate robots.txt based on env content for static websites",
+  "main": "index.js",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheng-huichao/env-robotstxt.git"
+  },
+  "keywords": [
+    "seo",
+    "env",
+    "temp link",
+    "robots",
+    "robots.txt",
+    "vercel",
+    "netlify",
+    "pages"
+  ],
+  "author": "Cheng Huichao",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
