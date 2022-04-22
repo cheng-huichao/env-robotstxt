@@ -31,9 +31,9 @@ Add the `robot` (or your preferred command) command in scripts object:
   },
 ```
 
-then set up the env variable `ENV_CONTENT`:
+then set up the env variable `ENV_ROBOTS_CONTENT`:
 ```javascript
-ENV_CONTENT="User-agent: *\nDisallow: \nSitemap: https://domain.name/sitemap.xml"
+ENV_ROBOTS_CONTENT="User-agent: *\nDisallow: \nSitemap: https://domain.name/sitemap.xml"
 ```
 
 ## Run

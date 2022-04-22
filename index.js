@@ -18,14 +18,14 @@ if (rootDirectory.length > 0) {
 var stream = fs.createWriteStream(`${rootDirectory}/robots.txt`);
 
 stream.once("open", function (fd) {
-  let robots_content = process.env.ENV_CONTENT ?? process.env.env_content;
+  let robots_content = process.env.ENV_ROBOTS_CONTENT ?? process.env.env_robots_content;
 
   if (robots_content) {
-    console.log("🧼 You havs set `env_content` variable.");
+    console.log("🧼 You havs set `env_robots_content` variable.");
     // if env_content is not empty, use the content to generate robots.txt file
     stream.write(robots_content);
   } else {
-    console.log("🤖 no `env_content` variable was found!");
+    console.log("🤖 no `env_robots_content` variable was found!");
     // no evn varibles, or by default it will generate disallow robots.txt file
     // eg.: dont set env for templink
     // set env for live site.
