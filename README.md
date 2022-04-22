@@ -1,33 +1,45 @@
 
 
-### To separate the robots.txt content by different branch sites, eg. staging branch for temp link, main branch for live site, as they are the same content they will affect SEO, so this plugin will separate robots contents.
+## Feature
 
-### `env-robotstxt` plugin for static websites (html, etc.), that running in serverless hosting like `vercel`, `netlify`, `cloudflare pages` etc. 
+ - Set `env variable` to generate `robots.txt` file
+ - Generate  `Disallow: /` by default (without env variable)
+ - Allow generate in to different folder
+ - Easy to config robots.txt if you use `git` (different branch different robots content)
+ - For all static website projects, like html, vue, react, angular, php, etc.
 
-Install it by using following commands: 
+## Install
+```
+ npm install env-robotstxt 
+ # or 
+ yarn add env-robotstxt
+```
 
-`npm install env-robotstxt` or `yarn add env-robotstxt`
+## Config 
 
-after install `env-robotstxt`, edit your `package.json` file to add the `robot` command in scripts object:
+Add the `robot` (or your preferred command) command in scripts object:
+
 ```json
 "scripts": {
-    "robot": "npx env-robotstxt"
+    "robot": "npx env-robotstxt"   // default
   },
 ```
-then set up the env variable `ENV_CONTENT` and use following build command:
+
+```json
+"scripts": {
+    "robot": "npx env-robotstxt dist"   // generate into `dist` folder
+  },
+```
+
+then set up the env variable `ENV_CONTENT`:
+```javascript
+ENV_CONTENT="User-agent: *\nDisallow: \nSitemap: https://domain.name/sitemap.xml"
+```
+
+## Run
 
 ```
 npm run robot
+or 
+yarn robot
 ```
-
- 
-  - set env variable `ENV_CONTENT` as robots.txt content
-  - if no env variable use the following as content:
-  ```
-User-agent: *
-Disallow: /
-  ```
- 
-use case: 
-- dont set any env variable for temp link
-- set env varible `ENV_CONTENT` for live site

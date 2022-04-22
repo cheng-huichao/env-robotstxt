@@ -1,6 +1,6 @@
 {
   "name": "env-robotstxt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "generate robots.txt based on env content for static websites",
   "main": "index.js",
   "bin": "index.js",
@@ -11,12 +11,9 @@
   "keywords": [
     "seo",
     "env",
-    "temp link",
     "robots",
     "robots.txt",
-    "vercel",
-    "netlify",
-    "pages"
+    "html"
   ],
   "author": "Cheng Huichao",
   "license": "MIT",
