@@ -23,7 +23,8 @@ stream.once("open", function (fd) {
   if (robots_content) {
     console.log("🧼 You havs set `env_robots_content` variable.");
     // if env_content is not empty, use the content to generate robots.txt file
-    stream.write(robots_content);
+    // fix netlify env variable break line issue - 2022-09-22 09:50:52
+    stream.write(robots_content.replace(/\\n/gm, "\n"));
   } else {
     console.log("🤖 no `env_robots_content` variable was found!");
     // no evn varibles, or by default it will generate disallow robots.txt file
